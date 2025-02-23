@@ -1,0 +1,21 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B15371F5-8DB9-4EA5-92D7-B200597ED067}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Herculean.Api", "src\Herculean.Api\Herculean.Api.csproj", "{DA204C93-FCB7-4330-B44D-18D019D91A88}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA204C93-FCB7-4330-B44D-18D019D91A88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA204C93-FCB7-4330-B44D-18D019D91A88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA204C93-FCB7-4330-B44D-18D019D91A88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA204C93-FCB7-4330-B44D-18D019D91A88}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DA204C93-FCB7-4330-B44D-18D019D91A88} = {B15371F5-8DB9-4EA5-92D7-B200597ED067}
+	EndGlobalSection
+EndGlobal
