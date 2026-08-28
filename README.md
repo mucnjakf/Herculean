@@ -1,7 +1,7 @@
 # <img src="herculean.svg" width="25"/> Herculean
 
 ### **👁️ Overview**
-Personal Fitness & Nutrition Management Web Application - 2025.
+Personal Fitness & Nutrition Management Web Application - 2026.
 
 <p align="justify">
   Herculean is a comprehensive fitness and nutrition management app designed to help users take control of their fitness and health.
