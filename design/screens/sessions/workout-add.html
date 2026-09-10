@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Herculean — Add Workout</title>
+    <link rel="stylesheet" href="../../styles/globals.css" />
+    <link rel="stylesheet" href="../../styles/components.css" />
+</head>
+
+<body>
+    <span class="side-label">HERCULEAN</span>
+    <div class="phone">
+        <div class="screen has-nav">
+
+            <div class="status-bar">
+                <span class="sb-time">9:41</span>
+                <div class="sb-icons"><svg width="26" height="12" fill="currentColor" viewBox="0 0 26 12">
+                        <rect x=".5" y="1.5" width="21" height="9" rx="2" fill="none" stroke="currentColor"
+                            stroke-width="1" />
+                        <rect x="2" y="3" width="16" height="6" rx="1" />
+                        <path d="M23 4.5v3a1.5 1.5 0 000-3z" />
+                    </svg></div>
+            </div>
+
+            <div class="screen-hdr px16">
+                <button class="back-btn" onclick="goBack()"><svg width="16" height="16" fill="none"
+                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round" viewBox="0 0 16 16">
+                        <path d="M10 3l-5 5 5 5" />
+                    </svg></button>
+                <span class="hdr-title">Add Workout</span>
+            </div>
+
+            <div class="screen-scroll px16 pb16 stack-14">
+
+                <!-- Search -->
+                <div class="search-bar">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 16 16"
+                        class="search-icon">
+                        <circle cx="7" cy="7" r="5" />
+                        <path d="M11 11l3 3" />
+                    </svg>
+                    <input placeholder="Search exercises…" />
+                </div>
+
+                <!-- Filter chips -->
+                <div class="filter-row">
+                    <div class="fchip active" onclick="selectChip(this)">All</div>
+                    <div class="fchip" onclick="selectChip(this)">Chest</div>
+                    <div class="fchip" onclick="selectChip(this)">Back</div>
+                    <div class="fchip" onclick="selectChip(this)">Shoulders</div>
+                    <div class="fchip" onclick="selectChip(this)">Arms</div>
+                    <div class="fchip" onclick="selectChip(this)">Legs</div>
+                    <div class="fchip" onclick="selectChip(this)">Core</div>
+                </div>
+
+                <!-- Selected exercise -->
+                <div
+                    style="padding:12px;background:var(--primary-dim);border:1px solid rgba(59,130,246,.3);border-radius:var(--r-2xl);display:flex;align-items:center;gap:12px">
+                    <div
+                        style="width:40px;height:40px;background:var(--primary);border-radius:var(--r-lg);display:flex;align-items:center;justify-content:center;font-size:20px">
+                        🏋️</div>
+                    <div class="flex-1">
+                        <div class="text-sm font-bold">Bench Press</div>
+                        <span class="badge badge-default" style="margin-top:4px">Chest</span>
+                    </div>
+                    <button class="btn-link">Change</button>
+                </div>
+
+                <!-- Sets section -->
+                <div>
+                    <div class="sec-hdr">
+                        <span class="sec-title">Sets</span>
+                        <button class="btn-link" onclick="toast('Set added')">+ Add Set</button>
+                    </div>
+                    <div class="stack-8" id="sets-container">
+                        <div class="set-inp-row">
+                            <span class="text-xs text-subtle font-bold"
+                                style="width:18px;text-align:center;flex-shrink:0">1</span>
+                            <div class="set-inp-group"><span class="set-inp-lbl">Weight (kg)</span><input
+                                    class="set-inp" type="number" value="80" /></div>
+                            <span
+                                style="color:var(--fg-subtle);font-size:18px;align-self:flex-end;padding-bottom:6px">×</span>
+                            <div class="set-inp-group"><span class="set-inp-lbl">Reps</span><input class="set-inp"
+                                    type="number" value="10" /></div>
+                            <button onclick="this.closest('.set-inp-row').remove()"
+                                style="background:none;border:none;color:var(--fg-subtle);cursor:pointer;align-self:flex-end;padding-bottom:6px">
+                                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewBox="0 0 14 14">
+                                    <path d="M2 2l10 10M12 2L2 12" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="set-inp-row">
+                            <span class="text-xs text-subtle font-bold"
+                                style="width:18px;text-align:center;flex-shrink:0">2</span>
+                            <div class="set-inp-group"><span class="set-inp-lbl">Weight (kg)</span><input
+                                    class="set-inp" type="number" value="80" /></div>
+                            <span
+                                style="color:var(--fg-subtle);font-size:18px;align-self:flex-end;padding-bottom:6px">×</span>
+                            <div class="set-inp-group"><span class="set-inp-lbl">Reps</span><input class="set-inp"
+                                    type="number" value="10" /></div>
+                            <button onclick="this.closest('.set-inp-row').remove()"
+                                style="background:none;border:none;color:var(--fg-subtle);cursor:pointer;align-self:flex-end;padding-bottom:6px">
+                                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewBox="0 0 14 14">
+                                    <path d="M2 2l10 10M12 2L2 12" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="set-inp-row">
+                            <span class="text-xs text-subtle font-bold"
+                                style="width:18px;text-align:center;flex-shrink:0">3</span>
+                            <div class="set-inp-group"><span class="set-inp-lbl">Weight (kg)</span><input
+                                    class="set-inp" type="number" value="85" /></div>
+                            <span
+                                style="color:var(--fg-subtle);font-size:18px;align-self:flex-end;padding-bottom:6px">×</span>
+                            <div class="set-inp-group"><span class="set-inp-lbl">Reps</span><input class="set-inp"
+                                    type="number" value="8" /></div>
+                            <button onclick="this.closest('.set-inp-row').remove()"
+                                style="background:none;border:none;color:var(--fg-subtle);cursor:pointer;align-self:flex-end;padding-bottom:6px">
+                                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewBox="0 0 14 14">
+                                    <path d="M2 2l10 10M12 2L2 12" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exercise picker list -->
+                <div>
+                    <div class="sec-hdr"><span class="sec-title">Choose Exercise</span></div>
+                    <div class="stack-8">
+                        <div class="list-item" onclick="toast('Bench Press selected')">
+                            <div class="li-icon" style="background:var(--primary-dim)">🏋️</div>
+                            <div class="li-body">
+                                <div class="li-title">Bench Press</div>
+                                <div class="li-sub">Chest</div>
+                            </div>
+                            <div
+                                style="width:20px;height:20px;background:var(--primary);border-radius:50%;display:flex;align-items:center;justify-content:center">
+                                <svg width="10" height="10" fill="none" stroke="white" stroke-width="2.5"
+                                    stroke-linecap="round" viewBox="0 0 10 10">
+                                    <path d="M2 5l2 2.5 4-4" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="list-item" onclick="toast('Incline DB Press selected')">
+                            <div class="li-icon" style="background:var(--primary-dim)">💪</div>
+                            <div class="li-body">
+                                <div class="li-title">Incline DB Press</div>
+                                <div class="li-sub">Chest</div>
+                            </div>
+                            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" viewBox="0 0 14 14" class="chev">
+                                <path d="M5 3l4 4-4 4" />
+                            </svg>
+                        </div>
+                        <div class="list-item" onclick="toast('Overhead Press selected')">
+                            <div class="li-icon" style="background:var(--purple-dim)">🏋️</div>
+                            <div class="li-body">
+                                <div class="li-title">Overhead Press</div>
+                                <div class="li-sub">Shoulders</div>
+                            </div>
+                            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" viewBox="0 0 14 14" class="chev">
+                                <path d="M5 3l4 4-4 4" />
+                            </svg>
+                        </div>
+                        <div class="list-item" onclick="toast('Pull-ups selected')">
+                            <div class="li-icon" style="background:var(--green-dim)">🏋️</div>
+                            <div class="li-body">
+                                <div class="li-title">Pull-ups</div>
+                                <div class="li-sub">Back</div>
+                            </div>
+                            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" viewBox="0 0 14 14" class="chev">
+                                <path d="M5 3l4 4-4 4" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn btn-default btn-full" onclick="toast('Workout added!');goBack()">Add to
+                    Session</button>
+            </div>
+
+            <div id="nav-container"></div>
+        </div>
+    </div>
+    <span class="side-label">DESIGN REF →</span>
+    <div id="toast-wrap">
+        <div class="toast" id="toast"></div>
+    </div>
+    <script src="../../js/app.js"></script>
+    <script>renderNav('calendar');</script>
+</body>
+
+</html>

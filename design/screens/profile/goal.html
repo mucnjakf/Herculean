@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Herculean — My Goal</title>
+    <link rel="stylesheet" href="../../styles/globals.css" />
+    <link rel="stylesheet" href="../../styles/components.css" />
+</head>
+
+<body>
+    <span class="side-label">HERCULEAN</span>
+    <div class="phone">
+        <div class="screen has-nav">
+
+            <div class="status-bar">
+                <span class="sb-time">9:41</span>
+                <div class="sb-icons"><svg width="26" height="12" fill="currentColor" viewBox="0 0 26 12">
+                        <rect x=".5" y="1.5" width="21" height="9" rx="2" fill="none" stroke="currentColor"
+                            stroke-width="1" />
+                        <rect x="2" y="3" width="16" height="6" rx="1" />
+                        <path d="M23 4.5v3a1.5 1.5 0 000-3z" />
+                    </svg></div>
+            </div>
+
+            <div class="screen-hdr px16">
+                <a href="profile.html" class="back-btn"><svg width="16" height="16" fill="none" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round" viewBox="0 0 16 16">
+                        <path d="M10 3l-5 5 5 5" />
+                    </svg></a>
+                <span class="hdr-title">My Goal</span>
+                <div class="hdr-actions">
+                    <a href="goal-edit.html" class="btn-icon"><svg width="14" height="14" fill="none"
+                            stroke="currentColor" stroke-width="2" viewBox="0 0 14 14">
+                            <path d="M9.5 1.5l3 3-7.5 7.5L1.5 12l.5-3.5 7.5-7.5z" />
+                        </svg></a>
+                    <button class="btn-icon btn-icon-danger" onclick="toast('Goal deleted')"><svg width="14" height="14"
+                            fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 14 14">
+                            <path d="M2.5 3.5h9M5.5 3.5V2h3v1.5M4.5 3.5l.5 9h4l.5-9" />
+                        </svg></button>
+                </div>
+            </div>
+
+            <div class="screen-scroll px16 pb16 stack-14">
+
+                <!-- Calorie goal hero -->
+                <div class="goal-hero">
+                    <div class="text-xs font-bold uppercase text-primary" style="letter-spacing:1px;margin-bottom:6px">
+                        Daily Calorie Goal</div>
+                    <div style="font-size:56px;font-weight:900;color:var(--fg);letter-spacing:-3px;line-height:1">2,800
+                    </div>
+                    <div class="text-sm text-muted" style="margin-top:4px">kcal per day</div>
+                </div>
+
+                <!-- Macro targets with today's progress -->
+                <div class="sec-hdr"><span class="sec-title">Macro Targets</span><span class="text-xs text-muted">vs.
+                        today</span></div>
+
+                <div class="card card-p stack-14">
+                    <!-- Protein -->
+                    <div>
+                        <div class="row-sb" style="margin-bottom:6px">
+                            <span class="text-sm font-bold" style="color:var(--primary)">Protein</span>
+                            <div><span class="text-lg font-extrabold">200</span><span class="text-xs text-muted"> g /
+                                    day</span></div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar pb-primary" style="width:71%"></div>
+                        </div>
+                        <div class="row-sb" style="margin-top:5px">
+                            <span class="text-xs text-subtle">Today: 142g (71%)</span>
+                            <span class="text-xs text-muted">800 kcal goal</span>
+                        </div>
+                    </div>
+
+                    <div class="sep"></div>
+
+                    <!-- Carbs -->
+                    <div>
+                        <div class="row-sb" style="margin-bottom:6px">
+                            <span class="text-sm font-bold text-yellow">Carbohydrates</span>
+                            <div><span class="text-lg font-extrabold">300</span><span class="text-xs text-muted"> g /
+                                    day</span></div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar pb-yellow" style="width:62%"></div>
+                        </div>
+                        <div class="row-sb" style="margin-top:5px">
+                            <span class="text-xs text-subtle">Today: 185g (62%)</span>
+                            <span class="text-xs text-muted">1,200 kcal goal</span>
+                        </div>
+                    </div>
+
+                    <div class="sep"></div>
+
+                    <!-- Fat -->
+                    <div>
+                        <div class="row-sb" style="margin-bottom:6px">
+                            <span class="text-sm font-bold text-purple">Fat</span>
+                            <div><span class="text-lg font-extrabold">80</span><span class="text-xs text-muted"> g /
+                                    day</span></div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar pb-purple" style="width:69%"></div>
+                        </div>
+                        <div class="row-sb" style="margin-top:5px">
+                            <span class="text-xs text-subtle">Today: 55g (69%)</span>
+                            <span class="text-xs text-muted">720 kcal goal</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Distribution bar -->
+                <div class="card card-p">
+                    <div class="text-sm font-bold" style="margin-bottom:10px">Calorie Distribution</div>
+                    <div style="height:10px;border-radius:var(--r-full);overflow:hidden;display:flex;gap:2px">
+                        <div style="background:var(--primary);flex:29" title="Protein 29%"></div>
+                        <div style="background:var(--yellow);flex:43" title="Carbs 43%"></div>
+                        <div style="background:var(--purple);flex:26" title="Fat 26%"></div>
+                    </div>
+                    <div class="row-8" style="margin-top:10px;flex-wrap:wrap">
+                        <div class="row-4">
+                            <div style="width:8px;height:8px;border-radius:50%;background:var(--primary)"></div><span
+                                class="text-xs text-muted">Protein 29%</span>
+                        </div>
+                        <div class="row-4">
+                            <div style="width:8px;height:8px;border-radius:50%;background:var(--yellow)"></div><span
+                                class="text-xs text-muted">Carbs 43%</span>
+                        </div>
+                        <div class="row-4">
+                            <div style="width:8px;height:8px;border-radius:50%;background:var(--purple)"></div><span
+                                class="text-xs text-muted">Fat 26%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="nav-container"></div>
+        </div>
+    </div>
+    <span class="side-label">DESIGN REF →</span>
+    <div id="toast-wrap">
+        <div class="toast" id="toast"></div>
+    </div>
+    <script src="../../js/app.js"></script>
+    <script>renderNav('profile');</script>
+</body>
+
+</html>

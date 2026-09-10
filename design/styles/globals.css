@@ -1,0 +1,619 @@
+/* ================================================================
+   Herculean — Design Reference
+   globals.css — Variables, reset, layout, utilities
+   Theme: shadcn/ui dark mode · Blue accent
+   ================================================================ */
+
+/* ── Reset ── */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+svg {
+    display: block;
+    flex-shrink: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* ── Design Tokens (shadcn dark palette + blue) ── */
+:root {
+    /* Backgrounds */
+    --bg: #020817;
+    /* background */
+    --bg-card: #0f172a;
+    /* card */
+    --bg-elevated: #1e293b;
+    /* secondary / muted / elevated input */
+    --bg-input: #1e293b;
+    /* input */
+    --bg-popover: #0f172a;
+
+    /* Foreground */
+    --fg: #f8fafc;
+    /* foreground */
+    --fg-muted: #94a3b8;
+    /* muted-foreground */
+    --fg-subtle: #475569;
+    /* even more muted */
+
+    /* Border */
+    --border: #1e293b;
+    --border-hi: #334155;
+    /* slightly brighter border */
+
+    /* Primary — blue-500 */
+    --primary: #3b82f6;
+    --primary-h: #2563eb;
+    /* hover */
+    --primary-dim: rgba(59, 130, 246, 0.12);
+    --primary-dim2: rgba(59, 130, 246, 0.22);
+    --primary-fg: #eff6ff;
+
+    /* Ring */
+    --ring: #2563eb;
+
+    /* Semantic */
+    --green: #22c55e;
+    --green-bg: rgba(20, 83, 45, 0.4);
+    --green-dim: rgba(34, 197, 94, 0.12);
+
+    --yellow: #f59e0b;
+    --yellow-bg: rgba(113, 63, 18, 0.4);
+    --yellow-dim: rgba(245, 158, 11, 0.12);
+
+    --purple: #a78bfa;
+    --purple-bg: rgba(109, 40, 217, 0.18);
+    --purple-dim: rgba(167, 139, 250, 0.12);
+
+    --red: #ef4444;
+    --red-bg: rgba(127, 29, 29, 0.5);
+    --red-dim: rgba(239, 68, 68, 0.12);
+    --red-border: rgba(239, 68, 68, 0.35);
+    --red-fg: #fca5a5;
+
+    /* Radius */
+    --r-xs: 2px;
+    --r-sm: 4px;
+    --r: 6px;
+    --r-md: 8px;
+    --r-lg: 10px;
+    --r-xl: 12px;
+    --r-2xl: 16px;
+    --r-3xl: 20px;
+    --r-full: 9999px;
+
+    /* Font */
+    --font: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* ── Body / Desktop wrapper ── */
+body {
+    font-family: var(--font);
+    background: #010610;
+    color: var(--fg);
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 36px 20px;
+    gap: 28px;
+}
+
+/* ── Side labels (desktop decoration) ── */
+.side-label {
+    writing-mode: vertical-rl;
+    color: rgba(255, 255, 255, 0.06);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    align-self: center;
+    user-select: none;
+    flex-shrink: 0;
+}
+
+/* ── Phone Frame ── */
+.phone {
+    width: 390px;
+    height: 844px;
+    background: var(--bg);
+    border-radius: 52px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow:
+        0 0 0 8px #060d1c,
+        0 0 0 9px rgba(255, 255, 255, 0.02),
+        0 50px 120px rgba(0, 0, 0, 0.95),
+        0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+/* Dynamic Island / Notch */
+.phone::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 128px;
+    height: 36px;
+    background: #060d1c;
+    border-radius: 0 0 22px 22px;
+    z-index: 999;
+    box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.04);
+}
+
+/* ── Screen ── */
+.screen {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: var(--bg);
+}
+
+.screen-scroll {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.screen-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.has-nav .screen-scroll {
+    padding-bottom: 80px;
+}
+
+/* ── Status Bar ── */
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 48px 26px 10px;
+    flex-shrink: 0;
+}
+
+.sb-time {
+    display: none;
+}
+
+.sb-icons {
+    display: none;
+    align-items: center;
+    gap: 6px;
+    color: var(--fg);
+}
+
+/* ── Screen Header ── */
+.screen-hdr {
+    display: flex;
+    align-items: center;
+    padding: 4px 16px 14px;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.hdr-title {
+    flex: 1;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--fg);
+    letter-spacing: -0.2px;
+}
+
+.hdr-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* ── Bottom Nav ── */
+.bottom-nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: rgba(2, 8, 23, 0.96);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: flex-start;
+    padding: 6px 4px 0;
+    z-index: 100;
+}
+
+.nav-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    padding: 8px 4px;
+    color: var(--fg-subtle);
+    transition: color 0.15s;
+    text-decoration: none;
+}
+
+.nav-item:hover {
+    color: var(--fg-muted);
+}
+
+.nav-item.active {
+    color: var(--primary);
+}
+
+.nav-icon {
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
+
+/* ── FAB ── */
+.fab {
+    position: absolute;
+    right: 20px;
+    bottom: 90px;
+    width: 52px;
+    height: 52px;
+    background: var(--primary);
+    color: var(--primary-fg);
+    border: none;
+    border-radius: var(--r-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 18px rgba(59, 130, 246, 0.5);
+    z-index: 50;
+    transition: background 0.15s, transform 0.1s;
+}
+
+.fab:hover {
+    background: var(--primary-h);
+}
+
+.fab:active {
+    transform: scale(0.94);
+}
+
+/* ── Toast ── */
+#toast-wrap {
+    position: absolute;
+    bottom: 92px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 500;
+    pointer-events: none;
+}
+
+.toast {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-hi);
+    border-radius: var(--r-full);
+    padding: 9px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--fg);
+    white-space: nowrap;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.2s, transform 0.2s;
+    transform: translateY(6px);
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ── Layout utilities ── */
+.px16 {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.pb16 {
+    padding-bottom: 16px;
+}
+
+.pt8 {
+    padding-top: 8px;
+}
+
+.stack {
+    display: flex;
+    flex-direction: column;
+}
+
+.stack-4 {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.stack-8 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.stack-10 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.stack-12 {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.stack-14 {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.stack-16 {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.stack-20 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+}
+
+.row-sb {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.row-4 {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.row-6 {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.row-8 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.row-10 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.row-12 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.row-16 {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.flex-1 {
+    flex: 1;
+    min-width: 0;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.h-full {
+    height: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* ── Typography ── */
+.text-xs {
+    font-size: 11px;
+}
+
+.text-sm {
+    font-size: 13px;
+}
+
+.text-base {
+    font-size: 14px;
+}
+
+.text-md {
+    font-size: 15px;
+}
+
+.text-lg {
+    font-size: 17px;
+}
+
+.text-xl {
+    font-size: 20px;
+}
+
+.text-2xl {
+    font-size: 24px;
+}
+
+.text-3xl {
+    font-size: 30px;
+}
+
+.text-4xl {
+    font-size: 38px;
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.font-extrabold {
+    font-weight: 800;
+}
+
+.font-black {
+    font-weight: 900;
+}
+
+.leading-none {
+    line-height: 1;
+}
+
+.tracking-tight {
+    letter-spacing: -0.3px;
+}
+
+.uppercase {
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ── Color utilities ── */
+.text-fg {
+    color: var(--fg);
+}
+
+.text-muted {
+    color: var(--fg-muted);
+}
+
+.text-subtle {
+    color: var(--fg-subtle);
+}
+
+.text-primary {
+    color: var(--primary);
+}
+
+.text-green {
+    color: var(--green);
+}
+
+.text-yellow {
+    color: var(--yellow);
+}
+
+.text-purple {
+    color: var(--purple);
+}
+
+.text-red {
+    color: var(--red);
+}
+
+/* ── Responsive ── */
+@media (max-width: 440px) {
+    body {
+        padding: 0;
+    }
+
+    .phone {
+        border-radius: 0;
+        width: 100%;
+        height: 100vh;
+        height: 100dvh;
+    }
+
+    .side-label {
+        display: none;
+    }
+}

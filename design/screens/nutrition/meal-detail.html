@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Herculean — Meal Detail</title>
+    <link rel="stylesheet" href="../../styles/globals.css" />
+    <link rel="stylesheet" href="../../styles/components.css" />
+</head>
+
+<body>
+    <span class="side-label">HERCULEAN</span>
+    <div class="phone">
+        <div class="screen has-nav">
+
+            <div class="status-bar">
+                <span class="sb-time">9:41</span>
+                <div class="sb-icons"><svg width="26" height="12" fill="currentColor" viewBox="0 0 26 12">
+                        <rect x=".5" y="1.5" width="21" height="9" rx="2" fill="none" stroke="currentColor"
+                            stroke-width="1" />
+                        <rect x="2" y="3" width="16" height="6" rx="1" />
+                        <path d="M23 4.5v3a1.5 1.5 0 000-3z" />
+                    </svg></div>
+            </div>
+
+            <div class="screen-hdr px16">
+                <a href="meals.html" class="back-btn"><svg width="16" height="16" fill="none" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round" viewBox="0 0 16 16">
+                        <path d="M10 3l-5 5 5 5" />
+                    </svg></a>
+                <span class="hdr-title">Breakfast</span>
+                <div class="hdr-actions">
+                    <a href="meal-create.html" class="btn-icon"><svg width="14" height="14" fill="none"
+                            stroke="currentColor" stroke-width="2" viewBox="0 0 14 14">
+                            <path d="M9.5 1.5l3 3-7.5 7.5L1.5 12l.5-3.5 7.5-7.5z" />
+                        </svg></a>
+                    <button class="btn-icon btn-icon-danger" onclick="toast('Meal deleted')"><svg width="14" height="14"
+                            fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 14 14">
+                            <path d="M2.5 3.5h9M5.5 3.5V2h3v1.5M4.5 3.5l.5 9h4l.5-9" />
+                        </svg></button>
+                </div>
+            </div>
+
+            <div class="screen-scroll px16 pb16 stack-12">
+
+                <!-- Meta -->
+                <div class="card card-p row-12">
+                    <div style="font-size:30px">🌅</div>
+                    <div class="flex-1">
+                        <div class="text-sm font-bold">Breakfast</div>
+                        <div class="text-xs text-muted" style="margin-top:2px">Wednesday, Sep 10, 2026</div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-xl font-extrabold text-primary">620</div>
+                        <div class="text-xs text-muted">kcal</div>
+                    </div>
+                </div>
+
+                <!-- Macro summary row -->
+                <div style="display:flex;border-radius:var(--r-xl);overflow:hidden;border:1px solid var(--border)">
+                    <div style="flex:1;padding:12px 8px;background:var(--bg-card);text-align:center">
+                        <div class="text-sm font-extrabold text-primary">48g</div>
+                        <div class="text-xs text-muted">Protein</div>
+                        <div style="width:6px;height:6px;border-radius:50%;background:var(--primary);margin:4px auto 0">
+                        </div>
+                    </div>
+                    <div style="flex:1;padding:12px 8px;background:var(--bg-elevated);text-align:center">
+                        <div class="text-sm font-extrabold text-yellow">72g</div>
+                        <div class="text-xs text-muted">Carbs</div>
+                        <div style="width:6px;height:6px;border-radius:50%;background:var(--yellow);margin:4px auto 0">
+                        </div>
+                    </div>
+                    <div style="flex:1;padding:12px 8px;background:var(--bg-card);text-align:center">
+                        <div class="text-sm font-extrabold text-purple">14g</div>
+                        <div class="text-xs text-muted">Fat</div>
+                        <div style="width:6px;height:6px;border-radius:50%;background:var(--purple);margin:4px auto 0">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Food list -->
+                <div class="card card-p">
+                    <div class="row-sb" style="margin-bottom:4px">
+                        <span class="text-sm font-bold">Foods</span>
+                        <a href="food-search.html" class="btn-link">+ Add Food</a>
+                    </div>
+                    <div class="food-item">
+                        <div class="food-ico">🌾</div>
+                        <div class="flex-1">
+                            <div class="food-name">Oatmeal</div>
+                            <div class="food-meta">100g · 68 kcal/100g</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-xs font-bold">68 kcal</div>
+                            <div class="text-xs text-muted">P:3 C:12 F:1</div>
+                        </div>
+                    </div>
+                    <div class="food-item">
+                        <div class="food-ico">🥚</div>
+                        <div class="flex-1">
+                            <div class="food-name">Eggs (×3)</div>
+                            <div class="food-meta">180g · 155 kcal/100g</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-xs font-bold">279 kcal</div>
+                            <div class="text-xs text-muted">P:24 C:2 F:19</div>
+                        </div>
+                    </div>
+                    <div class="food-item">
+                        <div class="food-ico">🍌</div>
+                        <div class="flex-1">
+                            <div class="food-name">Banana</div>
+                            <div class="food-meta">120g · 89 kcal/100g</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-xs font-bold">107 kcal</div>
+                            <div class="text-xs text-muted">P:1 C:27 F:0</div>
+                        </div>
+                    </div>
+                    <div class="food-item">
+                        <div class="food-ico">🥛</div>
+                        <div class="flex-1">
+                            <div class="food-name">Milk (2%)</div>
+                            <div class="food-meta">200ml · 52 kcal/100ml</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-xs font-bold">104 kcal</div>
+                            <div class="text-xs text-muted">P:7 C:10 F:4</div>
+                        </div>
+                    </div>
+                    <div class="food-item">
+                        <div class="food-ico">🍯</div>
+                        <div class="flex-1">
+                            <div class="food-name">Honey</div>
+                            <div class="food-meta">15g · 304 kcal/100g</div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-xs font-bold">46 kcal</div>
+                            <div class="text-xs text-muted">P:0 C:12 F:0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="nav-container"></div>
+        </div>
+    </div>
+    <span class="side-label">DESIGN REF →</span>
+    <div id="toast-wrap">
+        <div class="toast" id="toast"></div>
+    </div>
+    <script src="../../js/app.js"></script>
+    <script>renderNav('nutrition');</script>
+</body>
+
+</html>

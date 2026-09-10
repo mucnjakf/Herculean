@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Herculean — Sessions</title>
+    <link rel="stylesheet" href="../../styles/globals.css" />
+    <link rel="stylesheet" href="../../styles/components.css" />
+</head>
+
+<body>
+    <span class="side-label">HERCULEAN</span>
+    <div class="phone">
+        <div class="screen has-nav">
+
+            <div class="status-bar">
+                <span class="sb-time">9:41</span>
+                <div class="sb-icons"><svg width="26" height="12" fill="currentColor" viewBox="0 0 26 12">
+                        <rect x=".5" y="1.5" width="21" height="9" rx="2" fill="none" stroke="currentColor"
+                            stroke-width="1" />
+                        <rect x="2" y="3" width="16" height="6" rx="1" />
+                        <path d="M23 4.5v3a1.5 1.5 0 000-3z" />
+                    </svg></div>
+            </div>
+
+            <div class="screen-hdr px16"><span class="hdr-title">Sessions</span></div>
+
+            <div class="screen-scroll px16 pb16 stack-16">
+
+                <!-- Month navigation -->
+                <div class="row-sb">
+                    <button class="btn-icon btn-icon-sm" onclick="toast('Previous month')"><svg width="14" height="14"
+                            fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                            viewBox="0 0 14 14">
+                            <path d="M9 3l-4 4 4 4" />
+                        </svg></button>
+                    <span class="text-base font-bold">September 2026</span>
+                    <button class="btn-icon btn-icon-sm" onclick="toast('Next month')"><svg width="14" height="14"
+                            fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                            viewBox="0 0 14 14">
+                            <path d="M5 3l4 4-4 4" />
+                        </svg></button>
+                </div>
+
+                <!-- Day strip -->
+                <div class="cal-days">
+                    <div class="cal-day" onclick="selectDay(this)"><span class="cd-name">Mon</span><span
+                            class="cd-num">8</span><span class="cd-dot"></span></div>
+                    <div class="cal-day" onclick="selectDay(this)"><span class="cd-name">Tue</span><span
+                            class="cd-num">9</span><span class="cd-dot"></span></div>
+                    <div class="cal-day today selected has-s" onclick="selectDay(this)"><span
+                            class="cd-name">Wed</span><span class="cd-num">10</span><span class="cd-dot"></span></div>
+                    <div class="cal-day has-s" onclick="selectDay(this)"><span class="cd-name">Thu</span><span
+                            class="cd-num">11</span><span class="cd-dot"></span></div>
+                    <div class="cal-day" onclick="selectDay(this)"><span class="cd-name">Fri</span><span
+                            class="cd-num">12</span><span class="cd-dot"></span></div>
+                    <div class="cal-day has-s" onclick="selectDay(this)"><span class="cd-name">Sat</span><span
+                            class="cd-num">13</span><span class="cd-dot"></span></div>
+                    <div class="cal-day" onclick="selectDay(this)"><span class="cd-name">Sun</span><span
+                            class="cd-num">14</span><span class="cd-dot"></span></div>
+                    <div class="cal-day has-s" onclick="selectDay(this)"><span class="cd-name">Mon</span><span
+                            class="cd-num">15</span><span class="cd-dot"></span></div>
+                    <div class="cal-day" onclick="selectDay(this)"><span class="cd-name">Tue</span><span
+                            class="cd-num">16</span><span class="cd-dot"></span></div>
+                </div>
+
+                <!-- Day label -->
+                <div>
+                    <div class="text-xs text-muted font-semibold">Sessions for <span class="text-primary">Wednesday, Sep
+                            10</span></div>
+                </div>
+
+                <!-- Sessions for day -->
+                <div class="stack-10">
+                    <a href="session-detail.html" class="card card-p card-btn" style="display:block">
+                        <div class="row-sb" style="margin-bottom:10px">
+                            <div>
+                                <div class="text-base font-bold">Push Day</div>
+                                <div class="text-xs text-muted" style="margin-top:2px">Sep 10 · 4 workouts</div>
+                            </div>
+                            <span class="badge badge-default">Today</span>
+                        </div>
+                        <div class="row-8" style="flex-wrap:wrap;margin-bottom:12px">
+                            <span class="badge badge-default">Chest</span>
+                            <span class="badge badge-purple">Shoulders</span>
+                            <span class="badge badge-success">Triceps</span>
+                        </div>
+                        <div class="sep" style="margin-bottom:12px"></div>
+                        <div class="row-sb">
+                            <span class="text-xs text-muted">16 sets · ~55 min</span>
+                            <span class="text-xs font-bold text-green">−380 kcal</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Past sessions -->
+                <div>
+                    <div class="sec-hdr"><span class="sec-title">Past Sessions</span></div>
+                    <div class="stack-8">
+                        <a href="session-detail.html" class="list-item">
+                            <div class="li-icon" style="background:var(--primary-dim)">🏋️</div>
+                            <div class="li-body">
+                                <div class="li-title">Pull Day</div>
+                                <div class="li-sub">Sep 8 · Back, Biceps · 3 workouts</div>
+                            </div>
+                            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" viewBox="0 0 14 14" class="chev">
+                                <path d="M5 3l4 4-4 4" />
+                            </svg>
+                        </a>
+                        <a href="session-detail.html" class="list-item">
+                            <div class="li-icon" style="background:var(--green-dim)">🦵</div>
+                            <div class="li-body">
+                                <div class="li-title">Leg Day</div>
+                                <div class="li-sub">Sep 6 · Quads, Hamstrings · 5 workouts</div>
+                            </div>
+                            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" viewBox="0 0 14 14" class="chev">
+                                <path d="M5 3l4 4-4 4" />
+                            </svg>
+                        </a>
+                        <a href="session-detail.html" class="list-item">
+                            <div class="li-icon" style="background:var(--purple-dim)">💪</div>
+                            <div class="li-body">
+                                <div class="li-title">Upper Body</div>
+                                <div class="li-sub">Sep 4 · Chest, Shoulders · 4 workouts</div>
+                            </div>
+                            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" viewBox="0 0 14 14" class="chev">
+                                <path d="M5 3l4 4-4 4" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAB -->
+            <a href="session-create.html" class="fab">
+                <svg width="22" height="22" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"
+                    viewBox="0 0 22 22">
+                    <path d="M11 3v16M3 11h16" />
+                </svg>
+            </a>
+
+            <div id="nav-container"></div>
+        </div>
+    </div>
+    <span class="side-label">DESIGN REF →</span>
+    <div id="toast-wrap">
+        <div class="toast" id="toast"></div>
+    </div>
+    <script src="../../js/app.js"></script>
+    <script>renderNav('calendar');</script>
+</body>
+
+</html>

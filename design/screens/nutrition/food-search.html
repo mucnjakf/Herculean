@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Herculean — Add Food</title>
+    <link rel="stylesheet" href="../../styles/globals.css" />
+    <link rel="stylesheet" href="../../styles/components.css" />
+</head>
+
+<body>
+    <span class="side-label">HERCULEAN</span>
+    <div class="phone">
+        <div class="screen has-nav">
+
+            <div class="status-bar">
+                <span class="sb-time">9:41</span>
+                <div class="sb-icons"><svg width="26" height="12" fill="currentColor" viewBox="0 0 26 12">
+                        <rect x=".5" y="1.5" width="21" height="9" rx="2" fill="none" stroke="currentColor"
+                            stroke-width="1" />
+                        <rect x="2" y="3" width="16" height="6" rx="1" />
+                        <path d="M23 4.5v3a1.5 1.5 0 000-3z" />
+                    </svg></div>
+            </div>
+
+            <div class="screen-hdr px16">
+                <button class="back-btn" onclick="goBack()"><svg width="16" height="16" fill="none"
+                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round" viewBox="0 0 16 16">
+                        <path d="M10 3l-5 5 5 5" />
+                    </svg></button>
+                <span class="hdr-title">Add Food</span>
+            </div>
+
+            <div class="px16" style="padding-bottom:10px">
+                <div class="search-bar">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 16 16"
+                        class="search-icon">
+                        <circle cx="7" cy="7" r="5" />
+                        <path d="M11 11l3 3" />
+                    </svg>
+                    <input placeholder="Search foods…" value="chicken" />
+                </div>
+            </div>
+
+            <div class="screen-scroll px16 pb16">
+                <div class="text-xs text-muted font-semibold" style="margin-bottom:10px">Results for "chicken"</div>
+
+                <div class="card card-p stack-0">
+                    <!-- Food result 1 -->
+                    <div
+                        style="display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--border)">
+                        <div
+                            style="width:42px;height:42px;background:var(--primary-dim);border-radius:var(--r-lg);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0">
+                            🍗</div>
+                        <div class="flex-1">
+                            <div class="text-sm font-bold">Chicken Breast</div>
+                            <div class="text-xs text-muted">165 kcal · P:31g C:0g F:4g / 100g</div>
+                        </div>
+                        <button class="btn btn-default btn-sm"
+                            onclick="openSheet('amount-sheet');document.getElementById('sf-name').textContent='Chicken Breast';document.getElementById('sf-cal').textContent='165'">Add</button>
+                    </div>
+                    <!-- Food result 2 -->
+                    <div
+                        style="display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--border)">
+                        <div
+                            style="width:42px;height:42px;background:var(--primary-dim);border-radius:var(--r-lg);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0">
+                            🍗</div>
+                        <div class="flex-1">
+                            <div class="text-sm font-bold">Chicken Thigh</div>
+                            <div class="text-xs text-muted">209 kcal · P:26g C:0g F:11g / 100g</div>
+                        </div>
+                        <button class="btn btn-default btn-sm"
+                            onclick="openSheet('amount-sheet');document.getElementById('sf-name').textContent='Chicken Thigh';document.getElementById('sf-cal').textContent='209'">Add</button>
+                    </div>
+                    <!-- Food result 3 -->
+                    <div
+                        style="display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--border)">
+                        <div
+                            style="width:42px;height:42px;background:var(--yellow-dim);border-radius:var(--r-lg);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0">
+                            🍚</div>
+                        <div class="flex-1">
+                            <div class="text-sm font-bold">Chicken &amp; Rice</div>
+                            <div class="text-xs text-muted">155 kcal · P:18g C:16g F:2g / 100g</div>
+                        </div>
+                        <button class="btn btn-default btn-sm"
+                            onclick="openSheet('amount-sheet');document.getElementById('sf-name').textContent='Chicken & Rice';document.getElementById('sf-cal').textContent='155'">Add</button>
+                    </div>
+                    <!-- Food result 4 -->
+                    <div
+                        style="display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--border)">
+                        <div
+                            style="width:42px;height:42px;background:var(--green-dim);border-radius:var(--r-lg);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0">
+                            🥗</div>
+                        <div class="flex-1">
+                            <div class="text-sm font-bold">Chicken Caesar Salad</div>
+                            <div class="text-xs text-muted">120 kcal · P:10g C:6g F:7g / 100g</div>
+                        </div>
+                        <button class="btn btn-default btn-sm"
+                            onclick="openSheet('amount-sheet');document.getElementById('sf-name').textContent='Chicken Caesar Salad';document.getElementById('sf-cal').textContent='120'">Add</button>
+                    </div>
+                    <!-- Food result 5 -->
+                    <div style="display:flex;align-items:center;gap:12px;padding:11px 0">
+                        <div
+                            style="width:42px;height:42px;background:var(--primary-dim);border-radius:var(--r-lg);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0">
+                            🍗</div>
+                        <div class="flex-1">
+                            <div class="text-sm font-bold">Rotisserie Chicken</div>
+                            <div class="text-xs text-muted">190 kcal · P:28g C:0g F:8g / 100g</div>
+                        </div>
+                        <button class="btn btn-default btn-sm"
+                            onclick="openSheet('amount-sheet');document.getElementById('sf-name').textContent='Rotisserie Chicken';document.getElementById('sf-cal').textContent='190'">Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Amount bottom sheet -->
+            <div class="sheet-overlay" id="amount-sheet" onclick="closeSheet('amount-sheet', event)">
+                <div class="sheet">
+                    <div class="sheet-handle"></div>
+                    <div class="text-base font-bold" id="sf-name">Chicken Breast</div>
+                    <div class="text-xs text-muted" style="margin-top:3px;margin-bottom:14px" id="sf-meta">165 kcal per
+                        100g</div>
+                    <div class="field" style="margin-bottom:12px">
+                        <label class="field-label">Amount</label>
+                        <div class="input-unit-wrap"><input class="input" type="number" id="sf-amount" value="150"
+                                oninput="updatePreview()" /><span class="input-unit">g</span></div>
+                    </div>
+                    <div
+                        style="background:var(--bg-elevated);border-radius:var(--r-md);padding:10px 12px;margin-bottom:14px">
+                        <span class="text-xs text-muted">Calories: </span><span class="text-sm font-bold"
+                            id="sf-preview">248 kcal</span>
+                    </div>
+                    <button class="btn btn-default btn-full"
+                        onclick="toast('Food added!');closeSheetDirect('amount-sheet')">Add to Meal</button>
+                </div>
+            </div>
+
+            <div id="nav-container"></div>
+        </div>
+    </div>
+    <span class="side-label">DESIGN REF →</span>
+    <div id="toast-wrap">
+        <div class="toast" id="toast"></div>
+    </div>
+    <script src="../../js/app.js"></script>
+    <script>
+        renderNav('nutrition');
+        function updatePreview() {
+            const amt = parseFloat(document.getElementById('sf-amount').value) || 0;
+            const calPer100 = parseFloat(document.getElementById('sf-cal').textContent) || 165;
+            document.getElementById('sf-preview').textContent = Math.round(amt * calPer100 / 100) + ' kcal';
+        }
+    </script>
+</body>
+
+</html>

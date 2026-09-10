@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Herculean — Session Detail</title>
+    <link rel="stylesheet" href="../../styles/globals.css" />
+    <link rel="stylesheet" href="../../styles/components.css" />
+</head>
+
+<body>
+    <span class="side-label">HERCULEAN</span>
+    <div class="phone">
+        <div class="screen has-nav">
+
+            <div class="status-bar">
+                <span class="sb-time">9:41</span>
+                <div class="sb-icons"><svg width="26" height="12" fill="currentColor" viewBox="0 0 26 12">
+                        <rect x=".5" y="1.5" width="21" height="9" rx="2" fill="none" stroke="currentColor"
+                            stroke-width="1" />
+                        <rect x="2" y="3" width="16" height="6" rx="1" />
+                        <path d="M23 4.5v3a1.5 1.5 0 000-3z" />
+                    </svg></div>
+            </div>
+
+            <div class="screen-hdr px16">
+                <a href="calendar.html" class="back-btn"><svg width="16" height="16" fill="none" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round" viewBox="0 0 16 16">
+                        <path d="M10 3l-5 5 5 5" />
+                    </svg></a>
+                <span class="hdr-title">Push Day</span>
+                <div class="hdr-actions">
+                    <a href="session-create.html" class="btn-icon"><svg width="14" height="14" fill="none"
+                            stroke="currentColor" stroke-width="2" viewBox="0 0 14 14">
+                            <path d="M9.5 1.5l3 3-7.5 7.5L1.5 12l.5-3.5 7.5-7.5z" />
+                        </svg></a>
+                    <button class="btn-icon btn-icon-danger" onclick="toast('Session deleted')"><svg width="14"
+                            height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 14 14">
+                            <path d="M2.5 3.5h9M5.5 3.5V2h3v1.5M4.5 3.5l.5 9h4l.5-9" />
+                        </svg></button>
+                </div>
+            </div>
+
+            <div class="screen-scroll px16 pb16 stack-12">
+
+                <!-- Meta card -->
+                <div class="card card-p row-12">
+                    <div style="font-size:28px">📅</div>
+                    <div class="flex-1">
+                        <div class="text-sm font-bold">Wednesday, Sep 10, 2026</div>
+                        <div class="text-xs text-muted" style="margin-top:2px">4 workouts · 16 sets · ~55 min · 380 kcal
+                        </div>
+                    </div>
+                    <span class="badge badge-default">Today</span>
+                </div>
+
+                <!-- Workout 1: Bench Press -->
+                <div class="workout-card">
+                    <div class="wo-hdr">
+                        <div>
+                            <div class="text-sm font-bold">Bench Press</div>
+                            <div class="row-6" style="margin-top:4px"><span
+                                    class="badge badge-default">Chest</span><span class="text-xs text-muted">4
+                                    sets</span></div>
+                        </div>
+                        <button class="btn-icon btn-icon-danger btn-icon-sm" onclick="toast('Workout removed')"><svg
+                                width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"
+                                viewBox="0 0 14 14">
+                                <path d="M2.5 3.5h9M5.5 3.5V2h3v1.5M4.5 3.5l.5 9h4l.5-9" />
+                            </svg></button>
+                    </div>
+                    <div class="wo-body">
+                        <div class="sets-grid sets-head">
+                            <span></span><span class="text-xs text-subtle uppercase text-center">Weight</span><span
+                                class="text-xs text-subtle uppercase text-center">Reps</span><span
+                                class="text-xs text-subtle uppercase text-center">Volume</span>
+                        </div>
+                        <div class="sets-grid set-row"><span class="set-n">1</span>
+                            <div class="set-v">80 kg</div>
+                            <div class="set-v">10</div>
+                            <div class="set-v dim">800</div>
+                        </div>
+                        <div class="sets-grid set-row"><span class="set-n">2</span>
+                            <div class="set-v">80 kg</div>
+                            <div class="set-v">10</div>
+                            <div class="set-v dim">800</div>
+                        </div>
+                        <div class="sets-grid set-row"><span class="set-n">3</span>
+                            <div class="set-v">85 kg</div>
+                            <div class="set-v">8</div>
+                            <div class="set-v dim">680</div>
+                        </div>
+                        <div class="sets-grid set-row"><span class="set-n">4</span>
+                            <div class="set-v">85 kg</div>
+                            <div class="set-v">8</div>
+                            <div class="set-v dim">680</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Workout 2: Overhead Press -->
+                <div class="workout-card">
+                    <div class="wo-hdr">
+                        <div>
+                            <div class="text-sm font-bold">Overhead Press</div>
+                            <div class="row-6" style="margin-top:4px"><span
+                                    class="badge badge-purple">Shoulders</span><span class="text-xs text-muted">4
+                                    sets</span></div>
+                        </div>
+                        <button class="btn-icon btn-icon-danger btn-icon-sm" onclick="toast('Workout removed')"><svg
+                                width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"
+                                viewBox="0 0 14 14">
+                                <path d="M2.5 3.5h9M5.5 3.5V2h3v1.5M4.5 3.5l.5 9h4l.5-9" />
+                            </svg></button>
+                    </div>
+                    <div class="wo-body">
+                        <div class="sets-grid sets-head">
+                            <span></span><span class="text-xs text-subtle uppercase text-center">Weight</span><span
+                                class="text-xs text-subtle uppercase text-center">Reps</span><span
+                                class="text-xs text-subtle uppercase text-center">Volume</span>
+                        </div>
+                        <div class="sets-grid set-row"><span class="set-n">1</span>
+                            <div class="set-v">50 kg</div>
+                            <div class="set-v">10</div>
+                            <div class="set-v dim">500</div>
+                        </div>
+                        <div class="sets-grid set-row"><span class="set-n">2</span>
+                            <div class="set-v">55 kg</div>
+                            <div class="set-v">8</div>
+                            <div class="set-v dim">440</div>
+                        </div>
+                        <div class="sets-grid set-row"><span class="set-n">3</span>
+                            <div class="set-v">55 kg</div>
+                            <div class="set-v">8</div>
+                            <div class="set-v dim">440</div>
+                        </div>
+                        <div class="sets-grid set-row"><span class="set-n">4</span>
+                            <div class="set-v">55 kg</div>
+                            <div class="set-v">6</div>
+                            <div class="set-v dim">330</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Workout 3: Incline DB Press -->
+                <div class="workout-card">
+                    <div class="wo-hdr">
+                        <div>
+                            <div class="text-sm font-bold">Incline DB Press</div>
+                            <div class="row-6" style="margin-top:4px"><span
+                                    class="badge badge-default">Chest</span><span class="text-xs text-muted">4
+                                    sets</span></div>
+                        </div>
+                        <button class="btn-icon btn-icon-danger btn-icon-sm" onclick="toast('Workout removed')"><svg
+                                width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"
+                                viewBox="0 0 14 14">
+                                <path d="M2.5 3.5h9M5.5 3.5V2h3v1.5M4.5 3.5l.5 9h4l.5-9" />
+                            </svg></button>
+                    </div>
+                    <div class="wo-body">
+                        <div class="sets-grid sets-head"><span></span><span
+                                class="text-xs text-subtle uppercase text-center">Weight</span><span
+                                class="text-xs text-subtle uppercase text-center">Reps</span><span
+                                class="text-xs text-subtle uppercase text-center">Volume</span></div>
+                        <div class="sets-grid set-row"><span class="set-n">1</span>
+                            <div class="set-v">30 kg</div>
+                            <div class="set-v">12</div>
+                            <div class="set-v dim">360</div>
+                        </div>
+                        <div class="sets-grid set-row"><span class="set-n">2</span>
+                            <div class="set-v">30 kg</div>
+                            <div class="set-v">12</div>
+                            <div class="set-v dim">360</div>
+                        </div>
+                        <div class="sets-grid set-row"><span class="set-n">3</span>
+                            <div class="set-v">32 kg</div>
+                            <div class="set-v">10</div>
+                            <div class="set-v dim">320</div>
+                        </div>
+                        <div class="sets-grid set-row"><span class="set-n">4</span>
+                            <div class="set-v">32 kg</div>
+                            <div class="set-v">10</div>
+                            <div class="set-v dim">320</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Workout 4: Tricep Dips -->
+                <div class="workout-card">
+                    <div class="wo-hdr">
+                        <div>
+                            <div class="text-sm font-bold">Tricep Dips</div>
+                            <div class="row-6" style="margin-top:4px"><span
+                                    class="badge badge-success">Triceps</span><span class="text-xs text-muted">4
+                                    sets</span></div>
+                        </div>
+                        <button class="btn-icon btn-icon-danger btn-icon-sm" onclick="toast('Workout removed')"><svg
+                                width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"
+                                viewBox="0 0 14 14">
+                                <path d="M2.5 3.5h9M5.5 3.5V2h3v1.5M4.5 3.5l.5 9h4l.5-9" />
+                            </svg></button>
+                    </div>
+                    <div class="wo-body">
+                        <div class="sets-grid sets-head"><span></span><span
+                                class="text-xs text-subtle uppercase text-center">Weight</span><span
+                                class="text-xs text-subtle uppercase text-center">Reps</span><span
+                                class="text-xs text-subtle uppercase text-center">Volume</span></div>
+                        <div class="sets-grid set-row"><span class="set-n">1</span>
+                            <div class="set-v">BW</div>
+                            <div class="set-v">15</div>
+                            <div class="set-v dim">—</div>
+                        </div>
+                        <div class="sets-grid set-row"><span class="set-n">2</span>
+                            <div class="set-v">BW</div>
+                            <div class="set-v">12</div>
+                            <div class="set-v dim">—</div>
+                        </div>
+                        <div class="sets-grid set-row"><span class="set-n">3</span>
+                            <div class="set-v">+10 kg</div>
+                            <div class="set-v">10</div>
+                            <div class="set-v dim">—</div>
+                        </div>
+                        <div class="sets-grid set-row"><span class="set-n">4</span>
+                            <div class="set-v">+10 kg</div>
+                            <div class="set-v">8</div>
+                            <div class="set-v dim">—</div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="workout-add.html" class="btn btn-secondary btn-full">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" viewBox="0 0 16 16">
+                        <path d="M8 2v12M2 8h12" />
+                    </svg>
+                    Add Workout
+                </a>
+            </div>
+
+            <div id="nav-container"></div>
+        </div>
+    </div>
+    <span class="side-label">DESIGN REF →</span>
+    <div id="toast-wrap">
+        <div class="toast" id="toast"></div>
+    </div>
+    <script src="../../js/app.js"></script>
+    <script>renderNav('calendar');</script>
+</body>
+
+</html>

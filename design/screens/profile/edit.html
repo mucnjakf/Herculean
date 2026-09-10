@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Herculean — Edit Profile</title>
+    <link rel="stylesheet" href="../../styles/globals.css" />
+    <link rel="stylesheet" href="../../styles/components.css" />
+</head>
+
+<body>
+    <span class="side-label">HERCULEAN</span>
+    <div class="phone">
+        <div class="screen has-nav">
+
+            <div class="status-bar">
+                <span class="sb-time">9:41</span>
+                <div class="sb-icons"><svg width="26" height="12" fill="currentColor" viewBox="0 0 26 12">
+                        <rect x=".5" y="1.5" width="21" height="9" rx="2" fill="none" stroke="currentColor"
+                            stroke-width="1" />
+                        <rect x="2" y="3" width="16" height="6" rx="1" />
+                        <path d="M23 4.5v3a1.5 1.5 0 000-3z" />
+                    </svg></div>
+            </div>
+
+            <div class="screen-hdr px16">
+                <a href="profile.html" class="back-btn"><svg width="16" height="16" fill="none" stroke="currentColor"
+                        stroke-width="2.5" stroke-linecap="round" viewBox="0 0 16 16">
+                        <path d="M10 3l-5 5 5 5" />
+                    </svg></a>
+                <span class="hdr-title">Edit Profile</span>
+            </div>
+
+            <div class="screen-scroll px16 pb16 stack-12">
+                <div class="grid-2">
+                    <div class="field"><label class="field-label">First Name</label><input class="input"
+                            value="Filip" /></div>
+                    <div class="field"><label class="field-label">Last Name</label><input class="input"
+                            value="Kowalski" /></div>
+                </div>
+                <div class="field"><label class="field-label">Email</label><input class="input" type="email"
+                        value="filip@example.com" /></div>
+                <div class="sep"></div>
+                <div class="grid-2">
+                    <div class="field"><label class="field-label">Age</label><input class="input" type="number"
+                            value="28" /></div>
+                    <div class="field">
+                        <label class="field-label">Gender</label>
+                        <div class="toggle-group">
+                            <button class="toggle-item active" onclick="selectToggle(this)">Male</button>
+                            <button class="toggle-item" onclick="selectToggle(this)">Female</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-2">
+                    <div class="field">
+                        <label class="field-label">Height</label>
+                        <div class="input-unit-wrap"><input class="input" type="number" value="182" /><span
+                                class="input-unit">cm</span></div>
+                    </div>
+                    <div class="field">
+                        <label class="field-label">Weight</label>
+                        <div class="input-unit-wrap"><input class="input" type="number" value="85" /><span
+                                class="input-unit">kg</span></div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="field-label">Activity Level</label>
+                    <select class="input">
+                        <option>Sedentary</option>
+                        <option selected>Lightly Active</option>
+                        <option>Moderately Active</option>
+                        <option>Very Active</option>
+                        <option>Extra Active</option>
+                    </select>
+                </div>
+                <button class="btn btn-default btn-full"
+                    onclick="toast('Profile saved!');window.location.href='profile.html'">Save Changes</button>
+            </div>
+
+            <div id="nav-container"></div>
+        </div>
+    </div>
+    <span class="side-label">DESIGN REF →</span>
+    <div id="toast-wrap">
+        <div class="toast" id="toast"></div>
+    </div>
+    <script src="../../js/app.js"></script>
+    <script>renderNav('profile');</script>
+</body>
+
+</html>

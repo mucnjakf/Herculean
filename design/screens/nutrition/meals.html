@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Herculean — Nutrition</title>
+    <link rel="stylesheet" href="../../styles/globals.css" />
+    <link rel="stylesheet" href="../../styles/components.css" />
+</head>
+
+<body>
+    <span class="side-label">HERCULEAN</span>
+    <div class="phone">
+        <div class="screen has-nav">
+
+            <div class="status-bar">
+                <span class="sb-time">9:41</span>
+                <div class="sb-icons"><svg width="26" height="12" fill="currentColor" viewBox="0 0 26 12">
+                        <rect x=".5" y="1.5" width="21" height="9" rx="2" fill="none" stroke="currentColor"
+                            stroke-width="1" />
+                        <rect x="2" y="3" width="16" height="6" rx="1" />
+                        <path d="M23 4.5v3a1.5 1.5 0 000-3z" />
+                    </svg></div>
+            </div>
+
+            <div class="screen-hdr px16"><span class="hdr-title">Nutrition</span></div>
+
+            <!-- Date nav -->
+            <div class="date-nav">
+                <button class="btn-icon btn-icon-sm" onclick="toast('Previous day')"><svg width="14" height="14"
+                        fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" viewBox="0 0 14 14">
+                        <path d="M9 3l-4 4 4 4" />
+                    </svg></button>
+                <span class="date-label">Wednesday, Sep 10</span>
+                <button class="btn-icon btn-icon-sm" onclick="toast('Next day')"><svg width="14" height="14" fill="none"
+                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round" viewBox="0 0 14 14">
+                        <path d="M5 3l4 4-4 4" />
+                    </svg></button>
+            </div>
+
+            <div class="screen-scroll px16 pb16">
+
+                <!-- Daily summary -->
+                <a href="../dashboard/calorie-detail.html" class="card card-p card-btn"
+                    style="display:block;margin-bottom:16px">
+                    <div class="row-sb" style="margin-bottom:8px">
+                        <span class="text-sm font-semibold text-muted">Daily Total</span>
+                        <span class="text-base font-extrabold">1,820 <span class="text-xs text-muted font-medium">/
+                                2,800 kcal</span></span>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar pb-primary" style="width:65%"></div>
+                    </div>
+                    <div class="grid-3 text-center" style="margin-top:10px">
+                        <div>
+                            <div class="text-sm font-extrabold text-primary">142g</div>
+                            <div class="text-xs text-muted">Protein</div>
+                        </div>
+                        <div style="border-left:1px solid var(--border);border-right:1px solid var(--border)">
+                            <div class="text-sm font-extrabold text-yellow">185g</div>
+                            <div class="text-xs text-muted">Carbs</div>
+                        </div>
+                        <div>
+                            <div class="text-sm font-extrabold text-purple">55g</div>
+                            <div class="text-xs text-muted">Fat</div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Breakfast -->
+                <div class="meal-sec-hdr">
+                    <div class="meal-sec-name">🌅 Breakfast <span class="badge badge-secondary"
+                            style="font-size:11px">620 kcal</span></div>
+                    <a href="meal-create.html" class="btn-link">+ Add</a>
+                </div>
+                <div class="stack-8" style="margin-bottom:8px">
+                    <a href="meal-detail.html" class="list-item">
+                        <div class="li-icon" style="background:var(--primary-dim)">🌅</div>
+                        <div class="li-body">
+                            <div class="li-title">Breakfast · Sep 10</div>
+                            <div class="li-sub">Oatmeal, Eggs, Banana</div>
+                        </div><span class="text-sm font-bold">620</span><svg width="14" height="14" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 14 14"
+                            class="chev">
+                            <path d="M5 3l4 4-4 4" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Lunch -->
+                <div class="meal-sec-hdr">
+                    <div class="meal-sec-name">☀️ Lunch <span class="badge badge-secondary" style="font-size:11px">780
+                            kcal</span></div>
+                    <a href="meal-create.html" class="btn-link">+ Add</a>
+                </div>
+                <div class="stack-8" style="margin-bottom:8px">
+                    <a href="meal-detail.html" class="list-item">
+                        <div class="li-icon" style="background:var(--yellow-dim)">☀️</div>
+                        <div class="li-body">
+                            <div class="li-title">Lunch · Sep 10</div>
+                            <div class="li-sub">Chicken &amp; Rice, Broccoli</div>
+                        </div><span class="text-sm font-bold">780</span><svg width="14" height="14" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 14 14"
+                            class="chev">
+                            <path d="M5 3l4 4-4 4" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Dinner -->
+                <div class="meal-sec-hdr">
+                    <div class="meal-sec-name">🌙 Dinner</div>
+                    <a href="meal-create.html" class="btn-link">+ Add</a>
+                </div>
+                <div style="margin-bottom:8px">
+                    <div class="card" style="border-style:dashed;padding:20px">
+                        <div class="empty-state" style="padding:0">
+                            <div class="text-2xl">🍽️</div>
+                            <div class="text-xs text-muted">No dinner logged yet</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Snack -->
+                <div class="meal-sec-hdr">
+                    <div class="meal-sec-name">🥛 Snack <span class="badge badge-secondary" style="font-size:11px">420
+                            kcal</span></div>
+                    <a href="meal-create.html" class="btn-link">+ Add</a>
+                </div>
+                <div class="stack-8">
+                    <a href="meal-detail.html" class="list-item">
+                        <div class="li-icon" style="background:var(--purple-dim)">🥛</div>
+                        <div class="li-body">
+                            <div class="li-title">Snack · Sep 10</div>
+                            <div class="li-sub">Protein Shake</div>
+                        </div><span class="text-sm font-bold">420</span><svg width="14" height="14" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 14 14"
+                            class="chev">
+                            <path d="M5 3l4 4-4 4" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <a href="meal-create.html" class="fab">
+                <svg width="22" height="22" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"
+                    viewBox="0 0 22 22">
+                    <path d="M11 3v16M3 11h16" />
+                </svg>
+            </a>
+
+            <div id="nav-container"></div>
+        </div>
+    </div>
+    <span class="side-label">DESIGN REF →</span>
+    <div id="toast-wrap">
+        <div class="toast" id="toast"></div>
+    </div>
+    <script src="../../js/app.js"></script>
+    <script>renderNav('nutrition');</script>
+</body>
+
+</html>
